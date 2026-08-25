@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
   // Sem isso, no Android a imagem seria cortada (overflow: visible não é confiável lá).
   wrapper: {
     paddingRight: 28,
+    paddingLeft: 28,
     paddingBottom: 26,
     marginBottom: 18,
   },
