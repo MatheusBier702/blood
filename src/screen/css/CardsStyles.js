@@ -1,65 +1,66 @@
 import { StyleSheet } from 'react-native';
-import color from '../Colors/cor'
+import color from '../Colors/cor';
 
-// Paleta baseada no modelo de referência
-const AZUL_ESCURO = '#1A46C7';
-const AZUL_CLARO = '#2F6BF0';
-
+// Layout baseado no modelo de referência:
+// cartão branco, cantos bem arredondados, sombra suave e
+// ícone centralizado no topo, sobre fundo claro.
 export const styles = StyleSheet.create({
-  // O wrapper existe para "abrir espaço" pro ícone que estoura o card.
-  // Sem isso, no Android a imagem seria cortada (overflow: visible não é confiável lá).
+  // O wrapper pinta o fundo da lista inteira e cria o respiro entre os cards.
   wrapper: {
-    paddingRight: 28,
-    paddingLeft: 28,
-    paddingBottom: 26,
-    marginBottom: 18,
+    backgroundColor: color.fundo,
+    paddingHorizontal: 20,
+    paddingVertical: 9,
   },
 
   card: {
-    backgroundColor: '#fff',
-    border: `2px solid ${color.colorModelOne}`,
-    borderRadius: 26,
-    paddingVertical: 26,
-    paddingLeft: 26,
-    paddingRight: 110, // espaço interno reservado pro ícone não encostar no texto
-    minHeight: 150,
-    justifyContent: 'center',
-    boxShadow: `2px 2px 10px #666`
+    backgroundColor: color.branco,
+    borderRadius: 24,
+    borderWidth: 1,
+    borderColor: color.borda,
+    paddingTop: 96, // espaço reservado para o ícone que fica centralizado no topo
+    paddingBottom: 26,
+    paddingHorizontal: 22,
+    minHeight: 190,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    boxShadow: '0px 6px 16px rgba(31, 61, 43, 0.10)',
   },
 
   // Variação mais clara, caso queira alternar entre os cards
   cardClaro: {
-    backgroundColor: AZUL_CLARO,
+    backgroundColor: color.colorModelFive,
+    borderColor: color.colorModelFive,
   },
 
   titulo: {
-    color: color.colorModelOne,
-    fontSize: 30,
-    fontWeight: '800',
-    lineHeight: 34,
-    letterSpacing: -0.5,
-    marginBottom: 10,
+    color: color.colorModelFour,
+    fontSize: 22,
+    fontWeight: '700',
+    lineHeight: 26,
+    letterSpacing: -0.2,
+    textAlign: 'center',
+    marginBottom: 8,
   },
 
   descricao: {
-    color:  color.colorModelOne,
+    color: color.textoSuave,
     fontSize: 14,
     lineHeight: 21,
     fontWeight: '400',
+    textAlign: 'center',
   },
 
+  // Centraliza o ícone no topo do cartão, como no modelo.
+  iconeWrapper: {
+    position: 'absolute',
+    top: 26,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+  },
 
   icone: {
-    position: 'absolute',
-    right: 0,
-    bottom: 0,
-    width: 90,
-    height: 90,
-    // border: '1px solid green',
-    //   borderRadius: 26
+    width: 64,
+    height: 64,
   },
-
-  iconeWrapper: {
-    
-  }
 });
