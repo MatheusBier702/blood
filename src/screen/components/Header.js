@@ -1,21 +1,47 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { styles } from "../css/HeaderStyles";
 
-function Header() {
+// titulo: texto exibido na barra
+// voltar: troca o menu de três barras pelo botão "Voltar"
+function Header({ titulo = "Tela Inicial", voltar = false }) {
+  const navigation = useNavigation();
+
+  function handleVoltar() {
+    if (navigation.canGoBack()) {
+      navigation.goBack();
+    }
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.barra}>
-        {/* menu */}
-        <View style={styles.botao}>
-          <View style={styles.menu}>
-            <View style={styles.menuBarra} />
-            <View style={styles.menuBarra} />
-            <View style={styles.menuBarra} />
+        {voltar ? (
+          /* voltar */
+          <Pressable style={styles.botaoVoltar} onPress={handleVoltar}>
+            <View style={styles.seta}>
+              <View style={styles.setaLinha} />
+              <View style={styles.setaPonta} />
+            </View>
+            <Text style={styles.voltarTexto}>Voltar</Text>
+          </Pressable>
+        ) : (
+          /* menu */
+          <View style={styles.botao}>
+            <View style={styles.menu}>
+              <View style={styles.menuBarra} />
+              <View style={styles.menuBarra} />
+              <View style={styles.menuBarra} />
+            </View>
           </View>
-        </View>
+        )}
 
-        <Text style={styles.titulo}>Tela Inicial</Text>
+        <View style={styles.tituloArea} pointerEvents="none">
+          <Text style={styles.titulo} numberOfLines={1}>
+            {titulo}
+          </Text>
+        </View>
 
         <View style={styles.acoes}>
           {/* favoritos */}
