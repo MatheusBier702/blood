@@ -10,8 +10,15 @@ const alturaIcon = require("../../../screen/assets/altura.png");
 import { GlobalContext } from "../ContextGlobal";
 
 const CalculadoraIMC = () => {
-  const { altura, setAltura, peso, setPeso, handleClick } =
-    React.useContext(GlobalContext);
+  const {
+    altura,
+    setAltura,
+    peso,
+    setPeso,
+    handleClick,
+    handleContadorIdade,
+    contador,
+  } = React.useContext(GlobalContext);
 
   return (
     <View style={[styles.cartao, styles.cartaoEspaco]}>
@@ -85,16 +92,20 @@ const CalculadoraIMC = () => {
 
         <View style={styles.seletor}>
           <View style={styles.seletorBotao}>
-            <Text style={styles.seletorBotaoTexto}>–</Text>
+            <Pressable onPress={() => handleContadorIdade("-")}>
+              <Text style={styles.seletorBotaoTexto}>–</Text>
+            </Pressable>
           </View>
 
           <View style={styles.seletorValorArea}>
-            <Text style={styles.seletorValor}>24</Text>
+            <Text style={styles.seletorValor}>{contador}</Text>
             <Text style={styles.seletorUnidade}>anos</Text>
           </View>
 
           <View style={styles.seletorBotao}>
-            <Text style={styles.seletorBotaoTexto}>+</Text>
+            <Pressable onPress={() => handleContadorIdade("+")}>
+              <Text style={styles.seletorBotaoTexto}>+</Text>
+            </Pressable>
           </View>
         </View>
       </View>

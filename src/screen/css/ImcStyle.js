@@ -1,11 +1,12 @@
-import { StyleSheet } from 'react-native';
-import color from '../Colors/cor';
+import { StyleSheet } from "react-native";
+import color from "../Colors/cor";
 
 // Tom extra usado apenas para a faixa "Sobrepeso" do medidor.
 // Não existe vermelho na paleta oficial (cor.js), então foi escolhido
 // um tom que conversa com os tons de apoio (neutros/suaves) já usados.
-const vermelho = '#D97F7F';
-const vermelhoClaro = '#F7E3E3';
+const vermelho = "#D97F7F";
+const vermelhoClaro = "#F7E3E3";
+const vermelhoEscuro = "#B05A5A";
 
 export const styles = StyleSheet.create({
   // ---------- Base da tela ----------
@@ -27,7 +28,7 @@ export const styles = StyleSheet.create({
   titulo: {
     color: color.colorModelFour,
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: "700",
     letterSpacing: -0.2,
   },
 
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: color.borda,
     padding: 22,
-    boxShadow: '0px 6px 16px rgba(31, 61, 43, 0.10)',
+    boxShadow: "0px 6px 16px rgba(31, 61, 43, 0.10)",
   },
 
   cartaoEspaco: {
@@ -54,7 +55,7 @@ export const styles = StyleSheet.create({
 
   // ---------- Alternador Métrico / Fórmula ----------
   alternador: {
-    flexDirection: 'row',
+    flexDirection: "row",
     backgroundColor: color.fundo,
     borderRadius: 16,
     padding: 4,
@@ -63,16 +64,16 @@ export const styles = StyleSheet.create({
 
   alternadorBotao: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 10,
     borderRadius: 12,
   },
 
   alternadorBotaoAtivo: {
     backgroundColor: color.branco,
-    boxShadow: '0px 2px 6px rgba(31, 61, 43, 0.12)',
+    boxShadow: "0px 2px 6px rgba(31, 61, 43, 0.12)",
   },
 
   alternadorGlifo: {
@@ -84,12 +85,12 @@ export const styles = StyleSheet.create({
     width: 26,
     height: 26,
     marginRight: 6,
-    resizeMode: 'contain',
+    resizeMode: "contain",
   },
 
   alternadorTexto: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
     color: color.textoSuave,
   },
 
@@ -103,15 +104,15 @@ export const styles = StyleSheet.create({
   },
 
   campoCabecalho: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     marginBottom: 10,
   },
 
   campoLabelArea: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
 
   campoIconeCirculo: {
@@ -119,8 +120,8 @@ export const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     backgroundColor: color.colorModelTwo,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginRight: 10,
   },
 
@@ -131,18 +132,18 @@ export const styles = StyleSheet.create({
   campoIconeImagem: {
     width: 26,
     height: 26,
-    resizeMode: 'contain',
+    resizeMode: "contain",
   },
 
   campoLabel: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
     color: color.colorModelOne,
   },
 
   campoValor: {
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: "700",
     color: color.colorModelFour,
   },
 
@@ -154,7 +155,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 12,
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
     color: color.colorModelFour,
   },
 
@@ -163,20 +164,20 @@ export const styles = StyleSheet.create({
     height: 6,
     borderRadius: 3,
     backgroundColor: color.colorModelTwo,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 
   trilhaPreenchida: {
     height: 6,
     borderRadius: 3,
     backgroundColor: color.colorModelThree,
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     top: 0,
   },
 
   trilhaBolinha: {
-    position: 'absolute',
+    position: "absolute",
     width: 18,
     height: 18,
     borderRadius: 9,
@@ -184,14 +185,14 @@ export const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: color.colorModelThree,
     top: -6,
-    boxShadow: '0px 2px 4px rgba(31, 61, 43, 0.20)',
+    boxShadow: "0px 2px 4px rgba(31, 61, 43, 0.20)",
   },
 
   // ---------- Linha de campo (Idade) com seletor +/- ----------
   seletor: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     backgroundColor: color.fundo,
     borderRadius: 14,
     paddingVertical: 8,
@@ -205,24 +206,24 @@ export const styles = StyleSheet.create({
     backgroundColor: color.branco,
     borderWidth: 1,
     borderColor: color.borda,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   seletorBotaoTexto: {
     fontSize: 18,
-    fontWeight: '700',
+    fontWeight: "700",
     color: color.colorModelOne,
     lineHeight: 20,
   },
 
   seletorValorArea: {
-    alignItems: 'center',
+    alignItems: "center",
   },
 
   seletorValor: {
     fontSize: 20,
-    fontWeight: '700',
+    fontWeight: "700",
     color: color.colorModelFour,
   },
 
@@ -237,40 +238,45 @@ export const styles = StyleSheet.create({
     backgroundColor: color.colorModelOne,
     borderRadius: 16,
     paddingVertical: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 4,
-    boxShadow: '0px 8px 18px rgba(18, 98, 140, 0.30)',
+    boxShadow: "0px 8px 18px rgba(18, 98, 140, 0.30)",
   },
 
   botaoCalcularTexto: {
     color: color.branco,
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: "700",
     letterSpacing: 0.4,
   },
 
   // ---------- Cartão de resultado ----------
   resultadoTitulo: {
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: "700",
     color: color.colorModelFour,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 18,
   },
 
   // Medidor (versão sem SVG: barra segmentada representando
   // Abaixo do peso / Saudável / Sobrepeso, como no modelo de referência)
   medidorArea: {
-    alignItems: 'center',
+    alignItems: "center",
+  },
+
+  // Envolve a barra e a seta: e a referencia para posicionar a seta em %
+  medidorTrilha: {
+    width: "100%",
   },
 
   medidorBarra: {
-    flexDirection: 'row',
-    width: '100%',
+    flexDirection: "row",
+    width: "100%",
     height: 14,
     borderRadius: 8,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
 
   medidorFaixaAbaixo: {
@@ -289,22 +295,24 @@ export const styles = StyleSheet.create({
   },
 
   medidorMarcador: {
-    position: 'absolute',
+    position: "absolute",
     top: -10,
+    // metade da largura do triangulo (7 + 7), para a ponta cair no ponto exato
+    marginLeft: -7,
     width: 0,
     height: 0,
     borderLeftWidth: 7,
     borderRightWidth: 7,
     borderTopWidth: 10,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
+    borderLeftColor: "transparent",
+    borderRightColor: "transparent",
     borderTopColor: color.colorModelOne,
   },
 
   medidorLegendas: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
     marginTop: 8,
   },
 
@@ -314,14 +322,14 @@ export const styles = StyleSheet.create({
   },
 
   medidorEtiquetas: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
     marginTop: 14,
   },
 
   etiqueta: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
   },
 
@@ -347,18 +355,34 @@ export const styles = StyleSheet.create({
   etiquetaTexto: {
     fontSize: 11,
     color: color.textoSuave,
-    textAlign: 'center',
+    textAlign: "center",
+  },
+
+  // Destaque da etiqueta correspondente ao resultado
+  etiquetaTextoAtivaAbaixo: {
+    color: color.colorModelThree,
+    fontWeight: "700",
+  },
+
+  etiquetaTextoAtivaSaudavel: {
+    color: color.colorModelFour,
+    fontWeight: "700",
+  },
+
+  etiquetaTextoAtivaSobrepeso: {
+    color: vermelhoEscuro,
+    fontWeight: "700",
   },
 
   // Valor final do IMC
   resultadoValorArea: {
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 22,
   },
 
   resultadoValorLabel: {
     fontSize: 12,
-    fontWeight: '600',
+    fontWeight: "600",
     color: color.textoSuave,
     letterSpacing: 1,
     marginBottom: 2,
@@ -366,22 +390,82 @@ export const styles = StyleSheet.create({
 
   resultadoValor: {
     fontSize: 40,
-    fontWeight: '800',
+    fontWeight: "800",
     color: color.colorModelFour,
   },
 
   resultadoSelo: {
     marginTop: 10,
-    backgroundColor: color.colorModelFive,
     paddingHorizontal: 18,
     paddingVertical: 6,
     borderRadius: 20,
   },
 
   resultadoSeloTexto: {
-    color: color.colorModelFour,
     fontSize: 13,
-    fontWeight: '700',
+    fontWeight: "700",
+  },
+
+  // ---------- Variacoes de cor por faixa da barra ----------
+  valorAbaixo: {
+    color: color.colorModelThree,
+  },
+
+  valorSaudavel: {
+    color: color.colorModelFour,
+  },
+
+  valorSobrepeso: {
+    color: vermelhoEscuro,
+  },
+
+  // Estado antes de calcular (nao corresponde a nenhuma faixa da barra)
+  valorSemCalculo: {
+    color: color.textoSuave,
+  },
+
+  seloAbaixo: {
+    borderBottomWidth: 4,
+    borderTopWidth: 4,
+    borderBottomColor: color.colorModelTwo,
+    borderTopColor: color.colorModelTwo,
+    borderRadius: 1,
+  },
+
+  seloTextoAbaixo: {
+    color: color.colorModelOne,
+  },
+
+  seloSaudavel: {
+    borderBottomWidth: 4,
+    borderTopWidth: 4,
+    borderBottomColor: color.colorModelFive,
+    borderTopColor: color.colorModelFive,
+    borderRadius: 1,
+  },
+
+  seloTextoSaudavel: {
+    color: color.colorModelFour,
+  },
+
+  seloSobrepeso: {
+    borderBottomWidth: 4,
+    borderTopWidth: 4,
+    borderBottomColor: vermelhoClaro,
+    borderTopColor: vermelhoClaro,
+    borderRadius: 1,
+  },
+
+  seloTextoSobrepeso: {
+    color: vermelhoEscuro,
+  },
+
+  seloSemCalculo: {
+    backgroundColor: color.fundo,
+  },
+
+  seloTextoSemCalculo: {
+    color: color.textoSuave,
   },
 });
 
