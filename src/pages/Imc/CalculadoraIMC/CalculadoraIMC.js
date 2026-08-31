@@ -9,22 +9,9 @@ const formulaIcon = require("../../../screen/assets/formula.png");
 const alturaIcon = require("../../../screen/assets/altura.png");
 import { GlobalContext } from "../ContextGlobal";
 
-
 const CalculadoraIMC = () => {
-
-    const { altura, setAltura, peso, setPeso, setImc, handleClick, imc } =
-      React.useContext(GlobalContext);
-
-  // const [altura, setAltura] = React.useState(""); 
-  // const [peso, setPeso] = React.useState(""); 
-  // const [imc, setImc] = React.useState("")
-
-  // function handleClick() {
-  //   const calculoImc =  peso / (altura * altura);
-  //   const arredondarImc = calculoImc.toFixed(2); 
-
-  //   setImc(arredondarImc)
-  // }
+  const { altura, setAltura, peso, setPeso, handleClick } =
+    React.useContext(GlobalContext);
 
   return (
     <View style={[styles.cartao, styles.cartaoEspaco]}>
@@ -43,81 +30,80 @@ const CalculadoraIMC = () => {
       </View>
 
       {/* Altura */}
-      
-        <View style={styles.campo}>
-          <View style={styles.campoCabecalho}>
-            <View style={styles.campoLabelArea}>
-              <View style={styles.campoIconeCirculo}>
-                <Image source={alturaIcon} style={styles.campoIconeImagem} />
-              </View>
-              <Text style={styles.campoLabel}>Altura</Text>
-            </View>
-            <Text style={styles.campoValor}>182 cm</Text>
-          </View>
 
-          <TextInput
-            style={styles.inputNormal}
-            defaultValue="182"
-            keyboardType="numeric"
-            value={altura}
-            onChange={(e) => setAltura(e.target.value)}
-          />
+      <View style={styles.campo}>
+        <View style={styles.campoCabecalho}>
+          <View style={styles.campoLabelArea}>
+            <View style={styles.campoIconeCirculo}>
+              <Image source={alturaIcon} style={styles.campoIconeImagem} />
+            </View>
+            <Text style={styles.campoLabel}>Altura</Text>
+          </View>
+          <Text style={styles.campoValor}>182 cm</Text>
         </View>
 
-        {/* Peso */}
-        <View style={styles.campo}>
-          <View style={styles.campoCabecalho}>
-            <View style={styles.campoLabelArea}>
-              <View style={styles.campoIconeCirculo}>
-                <Image source={kiloIcon} style={styles.campoIconeImagem} />
-              </View>
-              <Text style={styles.campoLabel}>Peso</Text>
-            </View>
-            <Text style={styles.campoValor}>77 kg</Text>
-          </View>
+        <TextInput
+          style={styles.inputNormal}
+          defaultValue="182"
+          keyboardType="numeric"
+          value={altura}
+          onChangeText={setAltura}
+        />
+      </View>
 
-          <TextInput
-            style={styles.inputNormal}
-            defaultValue="77"
-            keyboardType="numeric"
-            value={peso}
-             onChange={(e) => setPeso(e.target.value)}
-          />
+      {/* Peso */}
+      <View style={styles.campo}>
+        <View style={styles.campoCabecalho}>
+          <View style={styles.campoLabelArea}>
+            <View style={styles.campoIconeCirculo}>
+              <Image source={kiloIcon} style={styles.campoIconeImagem} />
+            </View>
+            <Text style={styles.campoLabel}>Peso</Text>
+          </View>
+          <Text style={styles.campoValor}>77 kg</Text>
         </View>
 
-        {/* Idade */}
-        <View style={[styles.campo, { marginBottom: 8 }]}>
-          <View style={styles.campoCabecalho}>
-            <View style={styles.campoLabelArea}>
-              <View style={styles.campoIconeCirculo}>
-                <Image source={idadeIcon} style={styles.campoIconeImagem} />
-              </View>
-              <Text style={styles.campoLabel}>Idade</Text>
-            </View>
-          </View>
+        <TextInput
+          style={styles.inputNormal}
+          defaultValue="77"
+          keyboardType="numeric"
+          value={peso}
+          onChangeText={setPeso}
+        />
+      </View>
 
-          <View style={styles.seletor}>
-            <View style={styles.seletorBotao}>
-              <Text style={styles.seletorBotaoTexto}>–</Text>
+      {/* Idade */}
+      <View style={[styles.campo, { marginBottom: 8 }]}>
+        <View style={styles.campoCabecalho}>
+          <View style={styles.campoLabelArea}>
+            <View style={styles.campoIconeCirculo}>
+              <Image source={idadeIcon} style={styles.campoIconeImagem} />
             </View>
-
-            <View style={styles.seletorValorArea}>
-              <Text style={styles.seletorValor}>24</Text>
-              <Text style={styles.seletorUnidade}>anos</Text>
-            </View>
-
-            <View style={styles.seletorBotao}>
-              <Text style={styles.seletorBotaoTexto}>+</Text>
-            </View>
+            <Text style={styles.campoLabel}>Idade</Text>
           </View>
         </View>
 
-        <View style={styles.botaoCalcular}>
-          <Pressable onPress={handleClick}>
-            <Text style={styles.botaoCalcularTexto}>CALCULAR IMC</Text>
-          </Pressable>
-          
+        <View style={styles.seletor}>
+          <View style={styles.seletorBotao}>
+            <Text style={styles.seletorBotaoTexto}>–</Text>
+          </View>
+
+          <View style={styles.seletorValorArea}>
+            <Text style={styles.seletorValor}>24</Text>
+            <Text style={styles.seletorUnidade}>anos</Text>
+          </View>
+
+          <View style={styles.seletorBotao}>
+            <Text style={styles.seletorBotaoTexto}>+</Text>
+          </View>
         </View>
+      </View>
+
+      <View style={styles.botaoCalcular}>
+        <Pressable onPress={handleClick}>
+          <Text style={styles.botaoCalcularTexto}>CALCULAR IMC</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };

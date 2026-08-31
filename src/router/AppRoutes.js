@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Imc from "../pages/Imc/Imc";
+import Imc from "../pages/IMC/Imc";
 import Home from "../pages/Home";
 
 const Stack = createNativeStackNavigator();

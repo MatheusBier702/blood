@@ -24,7 +24,6 @@ export const GlobalStorage = ({ children }) => {
         imc,
         setImc,
         handleClick,
-        imc,
       }}
     >
       {children}

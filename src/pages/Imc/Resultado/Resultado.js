@@ -4,7 +4,7 @@ import { styles } from "../../../screen/css/ImcStyle";
 import { GlobalContext } from "../ContextGlobal";
 
 const Resultado = () => {
-  const {imc } = React.useContext(GlobalContext);
+  const { imc } = React.useContext(GlobalContext);
 
   return (
     <View style={styles.cartao}>
