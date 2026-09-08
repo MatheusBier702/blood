@@ -19,12 +19,17 @@ function Header({ titulo = "Tela Inicial", voltar = false }) {
       <View style={styles.barra}>
         {voltar ? (
           /* voltar */
-          <Pressable style={styles.botaoVoltar} onPress={handleVoltar}>
+          <Pressable
+            style={({ pressed }) => [styles.botaoVoltar, pressed && styles.botaoPressionado]}
+            onPress={handleVoltar}
+            accessibilityRole="button"
+            accessibilityLabel="Voltar"
+            hitSlop={8}
+          >
             <View style={styles.seta}>
               <View style={styles.setaLinha} />
               <View style={styles.setaPonta} />
             </View>
-            <Text style={styles.voltarTexto}>Voltar</Text>
           </Pressable>
         ) : (
           /* menu */

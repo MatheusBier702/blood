@@ -11,15 +11,19 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: color.colorModelFour,
     paddingTop: ALTURA_STATUS,
-    boxShadow: "0px 2px 8px rgba(31, 61, 43, 0.25)",
+    shadowColor: "#173C25",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.18,
+    shadowRadius: 10,
+    elevation: 5,
   },
 
   barra: {
-    height: 56,
+    height: 64,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 16,
+    paddingHorizontal: 14,
   },
 
   // O título ocupa a barra inteira em posição absoluta, por isso fica
@@ -33,13 +37,14 @@ export const styles = StyleSheet.create({
     bottom: 0,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 112,
+    paddingHorizontal: 128,
   },
 
   titulo: {
     color: color.branco,
-    fontSize: 20,
-    fontWeight: "700",
+    fontSize: 19,
+    fontWeight: "800",
+    letterSpacing: 0.2,
     textAlign: "center",
   },
 
@@ -50,17 +55,20 @@ export const styles = StyleSheet.create({
 
   // ---------- Botão voltar ----------
   botaoVoltar: {
+    width: 40,
     height: 40,
     flexDirection: "row",
     alignItems: "center",
-    paddingRight: 6,
+    justifyContent: "center",
+    borderRadius: 20,
+    backgroundColor: "rgba(255, 255, 255, 0.14)",
   },
 
   // A seta é desenhada com uma linha e uma ponta em formato de "V"
   seta: {
     width: 20,
     height: 16,
-    marginRight: 6,
+    marginLeft: 4,
   },
 
   setaLinha: {
@@ -85,17 +93,17 @@ export const styles = StyleSheet.create({
     transform: [{ rotate: "45deg" }],
   },
 
-  voltarTexto: {
-    color: color.branco,
-    fontSize: 15,
-    fontWeight: "600",
-  },
-
   botao: {
     width: 40,
     height: 40,
     alignItems: "center",
     justifyContent: "center",
+    borderRadius: 20,
+  },
+
+  botaoPressionado: {
+    opacity: 0.72,
+    transform: [{ scale: 0.96 }],
   },
 
   // Ícone de menu (três barras)
@@ -154,7 +162,9 @@ export const styles = StyleSheet.create({
 
   // Faixa verde abaixo da barra, como no modelo
   faixa: {
-    height: 18,
-    backgroundColor: color.colorModelFour,
+    height: 8,
+    backgroundColor: color.colorModelFive,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
   },
 });
