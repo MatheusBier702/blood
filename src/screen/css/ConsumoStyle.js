@@ -40,6 +40,7 @@ export const styles = StyleSheet.create({
 
   card: {
     flex: 1,
+    position: "relative",
     backgroundColor: color.branco,
     borderRadius: 18,
     borderWidth: 1,
@@ -47,6 +48,31 @@ export const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 14,
     boxShadow: "0px 4px 12px rgba(31, 61, 43, 0.08)",
+  },
+
+  // Quando o consumo passa do objetivo, a div do objetivo fica
+  // verdinha (verde clarinho) em vez de branca.
+  cardObjetivoAtingido: {
+    backgroundColor: color.colorModelFive,
+    borderColor: color.colorModelFive,
+  },
+
+  // Etiquetazinha vermelha que aparece no card do objetivo quando
+  // ele ainda não foi cumprido.
+  etiquetaMetaPendente: {
+    position: "absolute",
+    top: -8,
+    right: -8,
+    backgroundColor: color.vermelho,
+    borderRadius: 8,
+    paddingVertical: 3,
+    paddingHorizontal: 8,
+  },
+
+  etiquetaMetaPendenteTexto: {
+    fontSize: 10,
+    fontWeight: "700",
+    color: color.branco,
   },
 
   cardCabecalho: {

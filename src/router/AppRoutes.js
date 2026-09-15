@@ -13,6 +13,7 @@ import { Meditacao } from "../pages/Meditacao/meditacao";
 import { Frutas } from "../pages/Frutas/frutas";
 import { Dica } from "../pages/Dica/dica";
 import { Emergencia } from "../pages/Emergencia/emergencia";
+import GlobalStorageAgua from '../pages/Agua/GlobalContextAgua'
 
 const Stack = createNativeStackNavigator();
 
@@ -110,6 +111,7 @@ export default function AppRoutes() {
           headerShown: false,
         }}
       />
+
     </Stack.Navigator>
   );
 }

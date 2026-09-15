@@ -10,6 +10,9 @@ const color = {
     branco: '#FFFFFF',
     borda: '#E7EFE9',
     textoSuave: '#7C8B82',
+
+    // Alerta usado na etiquetazinha de "objetivo não cumprido"
+    vermelho: '#E5484D',
 };
 
 export default color;

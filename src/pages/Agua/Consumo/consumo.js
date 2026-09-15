@@ -7,6 +7,7 @@ export const Consumo = ({
   objetivo = 2000,
   lembrete = "--:--",
   falta = "",
+  atingiuObjetivo = false,
 }) => {
   const porcentagem = objetivo > 0 ? Math.round((consumido / objetivo) * 100) : 0;
 
@@ -20,7 +21,12 @@ export const Consumo = ({
 
       <View style={styles.cardsLinha}>
         {/* objetivo */}
-        <View style={styles.card}>
+        <View
+          style={[
+            styles.card,
+            atingiuObjetivo && styles.cardObjetivoAtingido,
+          ]}
+        >
           <View style={styles.cardCabecalho}>
             <View style={[styles.cardBarra, styles.cardBarraObjetivo]} />
             <Text style={styles.cardTitulo}>Objetivo</Text>
@@ -33,6 +39,12 @@ export const Consumo = ({
               <Text style={styles.botaoEditarGlifo}>✎</Text>
             </Pressable>
           </View>
+
+          {!atingiuObjetivo && (
+            <View style={styles.etiquetaMetaPendente}>
+              <Text style={styles.etiquetaMetaPendenteTexto}>Falta</Text>
+            </View>
+          )}
         </View>
 
         {/* próximo lembrete */}
