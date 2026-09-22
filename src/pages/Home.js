@@ -1,9 +1,12 @@
 import React from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, Pressable, Text } from "react-native";
 import { Cards } from "../screen/components/Cards";
 import Header from "../screen/components/Header";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+
+    const navigation = useNavigation();
 
     const informacoes = [
     {
@@ -92,6 +95,21 @@ const Home = () => {
 
       <Header />
 
+      <Pressable onPress={() => navigation.navigate("Perfil")}
+      style={{
+        padding: 15,
+        margin: 20,
+        backgroundColor: "#12B76A",
+        borderRadius: 12,
+        }}>
+
+      <Text style={{
+         color: "#fff",
+          textAlign: "center",
+           fontWeight: "bold"
+            }}>Meu Perfil</Text>
+     
+      </Pressable>
       <FlatList
         data={informacoes}
         keyExtractor={(item) => item.nome}

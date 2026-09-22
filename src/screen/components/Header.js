@@ -3,8 +3,7 @@ import { View, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "../css/HeaderStyles";
 
-// titulo: texto exibido na barra
-// voltar: troca o menu de três barras pelo botão "Voltar"
+
 function Header({ titulo = "Tela Inicial", voltar = false }) {
   const navigation = useNavigation();
 
@@ -18,7 +17,7 @@ function Header({ titulo = "Tela Inicial", voltar = false }) {
     <View style={styles.container}>
       <View style={styles.barra}>
         {voltar ? (
-          /* voltar */
+         
           <Pressable
             style={({ pressed }) => [styles.botaoVoltar, pressed && styles.botaoPressionado]}
             onPress={handleVoltar}
