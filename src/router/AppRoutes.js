@@ -15,13 +15,22 @@ import { Dica } from "../pages/Dica/dica";
 import { Emergencia } from "../pages/Emergencia/emergencia";
 import Perfil from "../pages/Perfil/perfil";
 import GlobalStorageAgua from '../pages/Agua/GlobalContextAgua';
+import cadastro from "../pages/Cadastro/cadastro";
 
 
 const Stack = createNativeStackNavigator();
 
 export default function AppRoutes() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Cadastro">
+       <Stack.Screen
+        name="Cadastro"
+        component={cadastro}
+        options={{
+          headerShown: false,
+        }}
+      />
+
       <Stack.Screen
         name="Imc"
         component={Imc}

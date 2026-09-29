@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from 'react';
+import { View, StyleSheet } from 'react-native';
 
 import FotoPerfil from "./fotoPerfil/fotoPerfil";
 import DadosPerfil from "./dadosPerfil/dadosPerfil";
