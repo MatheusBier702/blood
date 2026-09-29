@@ -16,6 +16,8 @@ import { Emergencia } from "../pages/Emergencia/emergencia";
 import Perfil from "../pages/Perfil/perfil";
 import GlobalStorageAgua from '../pages/Agua/GlobalContextAgua';
 import cadastro from "../pages/Cadastro/cadastro";
+import cadastroPesoAltura from "../pages/Cadastro/cadastroPesoAltura";
+import cadastroSangue from "../pages/Cadastro/cadastroSangue";
 
 
 const Stack = createNativeStackNavigator();
@@ -30,6 +32,21 @@ export default function AppRoutes() {
           headerShown: false,
         }}
       />
+       <Stack.Screen
+        name="cadastroPesoAltura"
+        component={cadastroPesoAltura}
+        options={{
+          headerShown: false,
+        }}
+      />
+       <Stack.Screen
+        name="cadastroSangue"
+        component={cadastroSangue}
+        options={{
+          headerShown: false,
+        }}
+      />
+
 
       <Stack.Screen
         name="Imc"

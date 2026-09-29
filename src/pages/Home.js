@@ -9,7 +9,7 @@ const Home = () => {
 
     const navigation = useNavigation();
 
-    const data = useContext(GlobalContext)
+    const {nomeUsuario} = useContext(GlobalContext) //Aqui puxa o nome do usuario digitado inicialmente no input do cadastro
 
     const informacoes = [
     {
@@ -96,7 +96,9 @@ const Home = () => {
   return (
     <View style={{ flex: 1 }}>
 
-      <Header titulo={data.teste}/>
+      {/* Aqui adiciona o nome do usuario que foi puxado do contexto global */}
+      <Header titulo={nomeUsuario}/> 
+        
 
       <Pressable onPress={() => navigation.navigate("Perfil")}
       style={{
