@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, FlatList, Pressable, Text } from "react-native";
 import { Cards } from "../screen/components/Cards";
 import Header from "../screen/components/Header";
 import { useNavigation } from "@react-navigation/native";
+import { GlobalContext } from "../api/GlobalContext";
 
 const Home = () => {
 
     const navigation = useNavigation();
+
+    const data = useContext(GlobalContext)
 
     const informacoes = [
     {
@@ -93,7 +96,7 @@ const Home = () => {
   return (
     <View style={{ flex: 1 }}>
 
-      <Header />
+      <Header titulo={data.teste}/>
 
       <Pressable onPress={() => navigation.navigate("Perfil")}
       style={{

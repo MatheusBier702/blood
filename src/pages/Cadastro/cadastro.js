@@ -1,38 +1,31 @@
 import React from "react";
-import { TextInput } from "react-native";
+import { Pressable, TextInput } from "react-native";
 import { View, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { GlobalContext } from "../../api/GlobalContext";
 const cadastro = () => {
+  const [nomeUsuario, setNomeUsuario] = React.useState("");
 
-    const  [nomeUsuario, setNomeUsuario] = React.useState("");
-    const  [emailUsuario, setEmailUsuario] = React.useState("");
+  const navigation = useNavigation()
+
+  const data = React.useContext(GlobalContext)
+
+  console.log(data.teste)
 
   return (
     <View>
-      {/* <TextInput
-        style={styles.input}
-        placeholder="Quantidade de água em ml"
-        keyboardType="numeric"
-        value={valorInput}
-        onChangeText={setValorInput}
-      /> */}
-
-
-      <TextInput 
-      placeholder="Nome"
-      keyboardType="text"
-      value={nomeUsuario}
-      onChangeText={setNomeUsuario}
+      <TextInput
+        placeholder="Digite seu nome para continuarmos"
+        keyboardType="text"
+        value={nomeUsuario}
+        onChangeText={setNomeUsuario}
       />
-      <TextInput 
-      placeholder="Email"
-      keyboardType="email"
-      value={emailUsuario}
-      onChangeText={setEmailUsuario}
-      />
-
 
       <Text>Nome: {nomeUsuario}</Text>
-      <Text>Email: {emailUsuario}</Text>
+
+      <Pressable onPress={() => navigation.navigate("Home")}>
+        <Text>Proximo</Text>
+      </Pressable>
     </View>
   );
 };

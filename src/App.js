@@ -2,7 +2,9 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 
 import AppRoutes from "../src/router/AppRoutes";
-import { GlobalContext, GlobalStorage } from "./pages/IMC/ContextGlobal";
+// import { GlobalContext, GlobalStorage } from "./pages/IMC/ContextGlobal";
+
+import { GlobalStorage } from "./api/GlobalContext";
 
 export default function App() {
   return (
