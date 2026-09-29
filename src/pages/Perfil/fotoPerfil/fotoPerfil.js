@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, Image, Pressable, StyleSheet } from "react";
+import {useState} from "react";
+import { View, Text, Image, Pressable, Alert, StyleSheet } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 export default function FotoPerfil() {
@@ -53,6 +53,7 @@ export default function FotoPerfil() {
   return (
     <View style={styles.container}>
       <Image
+        style={styles.foto}
         source={
           imagem
             ? { uri: imagem }
@@ -79,6 +80,6 @@ export const styles = StyleSheet.create({
     height: 120,
     borderRadius: 60,
     marginBottom: 20,
+    resizeMode: "cover",
   },
 })
-
