@@ -15,6 +15,7 @@ import { Dica } from "../pages/Dica/dica";
 import { Emergencia } from "../pages/Emergencia/emergencia";
 import Perfil from "../pages/Perfil/perfil";
 import GlobalStorageAgua from '../pages/Agua/GlobalContextAgua';
+import { inicialSangue } from "../pages/Sangue/InicialSangue/inicialSangue";
 
 
 const Stack = createNativeStackNavigator();
@@ -117,6 +118,13 @@ export default function AppRoutes() {
       <Stack.Screen
         name="Emergencia"
         component={Emergencia}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="InicialSangue"
+        component={inicialSangue}
         options={{
           headerShown: false,
         }}
