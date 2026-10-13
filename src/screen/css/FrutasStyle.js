@@ -1,0 +1,33 @@
+import { StyleSheet } from "react-native";
+import color from "../Colors/cor";
+
+export const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: color.fundo },
+  scroll: { paddingHorizontal: 20, paddingTop: 26, paddingBottom: 36 },
+  conteudo: { width: "100%", maxWidth: 680, alignSelf: "center" },
+  etiqueta: { color: color.colorModelFour, fontSize: 11, fontWeight: "800", letterSpacing: 1.8, marginBottom: 10 },
+  titulo: { color: color.colorModelFour, fontSize: 28, lineHeight: 34, fontWeight: "800", letterSpacing: -0.6, maxWidth: 420 },
+  subtitulo: { color: color.textoSuave, fontSize: 14, lineHeight: 21, marginTop: 8 },
+  busca: { flexDirection: "row", alignItems: "center", backgroundColor: color.branco, borderWidth: 1, borderColor: color.borda, borderRadius: 18, padding: 7, marginTop: 24, marginBottom: 26 },
+  iconeBusca: { width: 32, height: 28, marginLeft: 6, justifyContent: "center" },
+  lupa: { width: 14, height: 14, borderWidth: 2, borderRadius: 7, borderColor: color.textoSuave },
+  cabo: { position: "absolute", left: 14, top: 18, width: 7, height: 2, backgroundColor: color.textoSuave, transform: [{ rotate: "45deg" }] },
+  input: { flex: 1, minWidth: 0, fontSize: 14, color: color.colorModelFour, paddingVertical: 12, paddingRight: 6 },
+  botaoBusca: { backgroundColor: color.colorModelFour, borderRadius: 12, paddingHorizontal: 15, paddingVertical: 13 },
+  botaoTexto: { color: color.branco, fontSize: 13, fontWeight: "700" },
+  pressionado: { opacity: 0.75, transform: [{ scale: 0.98 }] },
+  secao: { color: color.colorModelFour, fontSize: 19, fontWeight: "700" },
+  legenda: { color: color.textoSuave, fontSize: 12, lineHeight: 18 },
+  estado: { alignItems: "center", paddingBottom: 24 },
+  aviso: { padding: 16, borderRadius: 16, backgroundColor: color.colorModelFive, marginBottom: 24 },
+  avisoTexto: { color: color.colorModelFour, fontSize: 14, lineHeight: 21 },
+  resultado: { padding: 20, backgroundColor: color.branco, borderWidth: 1, borderColor: color.borda, borderRadius: 24, marginBottom: 26 },
+  resultadoCabecalho: { flexDirection: "row", alignItems: "center", gap: 12, marginBottom: 18 },
+  resultadoIcone: { width: 64, height: 64 },
+  resultadoTexto: { flex: 1 },
+  nutrientes: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
+  nutriente: { flexGrow: 1, flexBasis: "45%", padding: 12, backgroundColor: color.fundo, borderRadius: 12 },
+  valor: { fontSize: 21, fontWeight: "700", color: color.colorModelFour, marginTop: 4 },
+  unidade: { fontSize: 12, fontWeight: "400", color: color.textoSuave },
+  fonte: { color: color.textoSuave, fontSize: 11, marginTop: 14 },
+});

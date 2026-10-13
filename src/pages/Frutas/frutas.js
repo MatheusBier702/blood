@@ -1,41 +1,33 @@
-﻿import React from "react";
-import { View, TextInput, Pressable, Text } from "react-native";
-import axios from "axios";
+import React from "react";
+import { View, ScrollView } from "react-native";
 import Header from "../../screen/components/Header";
+import { styles } from "../../screen/css/FrutasStyle";
+import { BuscaFruta } from "./BuscaFruta/BuscaFruta";
+import { EstadoBusca } from "./EstadoBusca/EstadoBusca";
+import { ResultadoFruta } from "./ResultadoFruta/ResultadoFruta";
+import { useFrutas } from "./useFrutas";
 
 export const Frutas = () => {
-  const [fruta, setFruta] = React.useState("");
-
-  const handleClick = async () => {
-    if (!fruta.trim()) {
-      console.log("Digite o nome de uma fruta.");
-      return;
-    }
-
-    try {
-      const response = await axios.get(
-        `https://www.fruityvice.com/api/fruit/${fruta.trim()}`
-      );
-
-      console.log(response.data);
-    } catch (error) {
-      console.error("Erro ao buscar fruta:", error);
-    }
-  };
+  const { fruta, setFruta, resultado, selecionada, carregando, erro, buscar } =
+    useFrutas();
 
   return (
-    <View>
+    <View style={styles.container}>
       <Header titulo="Frutas" voltar />
-
-      <TextInput
-        placeholder="Digite sua fruta"
-        value={fruta}
-        onChangeText={setFruta}
-      />
-
-      <Pressable onPress={handleClick}>
-        <Text>BUSCAR FRUTA</Text>
-      </Pressable>
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={styles.scroll}
+      >
+        <View style={styles.conteudo}>
+          <BuscaFruta fruta={fruta} setFruta={setFruta} buscar={buscar} />
+          <EstadoBusca
+            carregando={carregando}
+            selecionada={selecionada}
+            erro={erro}
+          />
+          <ResultadoFruta resultado={resultado} selecionada={selecionada} />
+        </View>
+      </ScrollView>
     </View>
   );
 };
