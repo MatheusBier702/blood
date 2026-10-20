@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { styles } from "../css/HeaderStyles";
 
 
-function Header({ titulo = "Tela Inicial", voltar = false }) {
+function Header({ titulo = "Tela Inicial", voltar = false, acaoDireita = null }) {
   const navigation = useNavigation();
 
   function handleVoltar() {
@@ -40,6 +40,8 @@ function Header({ titulo = "Tela Inicial", voltar = false }) {
             </View>
           </View>
         )}
+
+        <View style={styles.acoes}>{acaoDireita}</View>
 
         <View style={styles.tituloArea} pointerEvents="none">
           <Text style={styles.titulo} numberOfLines={1}>

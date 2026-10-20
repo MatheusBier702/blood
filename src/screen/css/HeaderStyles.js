@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     bottom: 0,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 128,
+    paddingHorizontal: 86,
   },
 
   titulo: {
