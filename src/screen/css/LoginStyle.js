@@ -1,0 +1,68 @@
+import { StyleSheet } from "react-native";
+import color from "../Colors/cor";
+
+export const styles = StyleSheet.create({
+  pagina: { flex: 1, backgroundColor: color.fundo },
+  conteudo: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 24,
+  },
+  cartao: {
+    width: "100%",
+    maxWidth: 480,
+    backgroundColor: color.branco,
+    borderRadius: 24,
+    padding: 24,
+  },
+  marca: {
+    color: color.colorModelFour,
+    fontSize: 14,
+    fontWeight: "800",
+    letterSpacing: 3,
+    marginBottom: 16,
+  },
+  titulo: {
+    color: "#23352B",
+    fontSize: 30,
+    fontWeight: "700",
+    marginBottom: 8,
+  },
+  descricao: {
+    color: color.textoSuave,
+    fontSize: 16,
+    lineHeight: 24,
+    marginBottom: 24,
+  },
+  formulario: { gap: 16 },
+  campo: { gap: 8 },
+  rotulo: { color: "#23352B", fontSize: 14, fontWeight: "600" },
+  input: {
+    borderWidth: 1,
+    borderColor: color.borda,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 14,
+    fontSize: 16,
+    color: "#23352B",
+    backgroundColor: color.fundo,
+  },
+  seletor: {
+    borderWidth: 1,
+    borderColor: color.borda,
+    borderRadius: 12,
+    backgroundColor: color.fundo,
+    overflow: "hidden",
+  },
+  picker: { width: "100%", color: "#23352B" },
+  botao: {
+    backgroundColor: color.colorModelFour,
+    padding: 16,
+    borderRadius: 12,
+    alignItems: "center",
+    marginTop: 8,
+  },
+  botaoTexto: { color: color.branco, fontSize: 17, fontWeight: "700" },
+  pressionado: { opacity: 0.8 },
+});

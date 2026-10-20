@@ -3,6 +3,8 @@ import React from "react";
 export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
+  const [nome, setNome] = React.useState("");
+  const [tipoSangue, setTipoSangue] = React.useState("");
   const [altura, setAltura] = React.useState("");
   const [peso, setPeso] = React.useState("");
   const [imc, setImc] = React.useState(0);
@@ -20,17 +22,18 @@ export const GlobalStorage = ({ children }) => {
 
   function handleContadorIdade(operacao) {
     if (operacao === "+") {
-      setContador((idadeAtual) => idadeAtual + 1);
+      setContador((idadeAtual) => Number(idadeAtual) + 1);
     }
 
     if (operacao === "-") {
-      setContador((idadeAtual) => idadeAtual - 1);
+      setContador((idadeAtual) => Number(idadeAtual) - 1);
     }
   }
 
   return (
     <GlobalContext.Provider
       value={{
+        nome, setNome, tipoSangue, setTipoSangue, setContador,
         altura,
         setAltura,
         peso,

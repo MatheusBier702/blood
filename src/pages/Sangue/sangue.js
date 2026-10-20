@@ -1,11 +1,12 @@
-﻿import React, { useState } from "react";
+﻿import React from "react";
+import { GlobalContext } from "../IMC/ContextGlobal";
 import { View, Pressable, Text, ScrollView, StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import Header from "../../screen/components/Header";
 import { TIPOS_SANGUINEOS, tipoSanguineoValido } from "./compatibilidade";
 
 export const Sangue = ({ navigation }) => {
-  const [tipoSangue, setTipoSangue] = useState("");
+  const { tipoSangue, setTipoSangue } = React.useContext(GlobalContext);
   const valido = tipoSanguineoValido(tipoSangue);
 
   const proximo = () => {

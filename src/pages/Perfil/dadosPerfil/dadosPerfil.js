@@ -1,34 +1,26 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { GlobalContext } from "../../IMC/ContextGlobal";
 
 export default function DadosPerfil() {
-    
-    return(
-        <View style={styles.container}>
-            <View style={styles.dado}>
-                <Text style={styles.titulo}>IDADE</Text>
-                <Text style={styles.valor}>17</Text>
-            </View>
-
-            <View style={styles.dado}>
-                <Text style={styles.titulo}>TIPO SANGUÍNEO</Text>
-                <Text style={styles.valor}>AB-</Text>
-            </View>
-
-            <View style={styles.dado}>
-                <Text style={styles.titulo}>ALTURA</Text>
-                <Text style={styles.valor}>1.70</Text>
-            </View>
-
-            <View style={styles.dado}>
-                <Text style={styles.titulo}>PESO</Text>
-                <Text style={styles.valor}>70 KG</Text>
-            
-            </View>
-
+  const { nome, contador, tipoSangue, altura, peso } = React.useContext(GlobalContext);
+  const dados = [
+    ["NOME", nome],
+    ["IDADE", contador ? String(contador) : ""],
+    ["TIPO SANGUÍNEO", tipoSangue],
+    ["ALTURA", altura ? altura + " cm" : ""],
+    ["PESO", peso ? peso + " kg" : ""],
+  ];
+  return (
+    <View style={styles.container}>
+      {dados.map(([titulo, valor]) => (
+        <View key={titulo} style={styles.dado}>
+          <Text style={styles.titulo}>{titulo}</Text>
+          <Text style={styles.valor}>{valor || "Não informado"}</Text>
         </View>
-
-    );
+      ))}
+    </View>
+  );
 }
 
 export const styles = StyleSheet.create({

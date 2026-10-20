@@ -1,4 +1,5 @@
 import React from "react";
+import { GlobalContext } from "../IMC/ContextGlobal";
 
 export const GlobalContextAgua = React.createContext();
 
@@ -6,7 +7,7 @@ export const GlobalStorageAgua = ({ children }) => {
   const [coposArray, setCoposArray] = React.useState([]);
 
   const [consumo, setConsumo] = React.useState(0);
-  const [peso, setPeso] = React.useState("");
+  const { peso, setPeso } = React.useContext(GlobalContext);
 
   const [value, setValue] = React.useState(0);
   const [modalVisible, setModalVisible] = React.useState(false);

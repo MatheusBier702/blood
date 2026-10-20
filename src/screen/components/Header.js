@@ -47,27 +47,7 @@ function Header({ titulo = "Tela Inicial", voltar = false }) {
           </Text>
         </View>
 
-        <View style={styles.acoes}>
-          {/* favoritos */}
-          <View style={styles.botao}>
-            <Text style={styles.glifo}>♥</Text>
-          </View>
-
-          {/* busca */}
-          <View style={styles.botao}>
-            <View style={styles.lupa} />
-            <View style={styles.lupaCabo} />
-          </View>
-
-          {/* opções */}
-          <View style={styles.botao}>
-            <View style={styles.pontos}>
-              <View style={styles.ponto} />
-              <View style={styles.ponto} />
-              <View style={styles.ponto} />
-            </View>
-          </View>
-        </View>
+  
       </View>
 
       <View style={styles.faixa} />

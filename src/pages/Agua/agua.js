@@ -31,7 +31,7 @@ const AguaContent = () => {
   } = React.useContext(GlobalContextAgua);
 
 
-  const [formularioEnviado, setFormularioEnviado] = React.useState(false);
+  const [formularioEnviado, setFormularioEnviado] = React.useState(Boolean(peso));
 
   const handleContinuar = () => {
     if (!peso) {

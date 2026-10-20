@@ -14,7 +14,7 @@ import { Frutas } from "../pages/Frutas/frutas";
 import { Dica } from "../pages/Dica/dica";
 import { Emergencia } from "../pages/Emergencia/emergencia";
 import Perfil from "../pages/Perfil/perfil";
-import GlobalStorageAgua from '../pages/Agua/GlobalContextAgua';
+import Login from "../pages/Login/login";
 import { inicialSangue } from "../pages/Sangue/InicialSangue/inicialSangue";
 
 
@@ -22,7 +22,8 @@ const Stack = createNativeStackNavigator();
 
 export default function AppRoutes() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Login">
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
       <Stack.Screen
         name="Imc"
         component={Imc}
