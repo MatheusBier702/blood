@@ -17,7 +17,6 @@ export const AtalhoPerfil = () => {
         <View style={styles.cabeca} />
         <View style={styles.corpo} />
       </View>
-      <Text style={styles.texto}>Meu Perfil</Text>
     </Pressable>
   );
 };

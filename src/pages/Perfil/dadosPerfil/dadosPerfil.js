@@ -3,18 +3,20 @@ import { View, Text, StyleSheet } from "react-native";
 import { GlobalContext } from "../../IMC/ContextGlobal";
 
 export default function DadosPerfil() {
-  const { nome, contador, tipoSangue, altura, peso } = React.useContext(GlobalContext);
+  const { nome, contador, tipoSangue, altura, peso, email, senha } = React.useContext(GlobalContext);
   const dados = [
     ["NOME", nome],
     ["IDADE", contador ? String(contador) : ""],
     ["TIPO SANGUÍNEO", tipoSangue],
     ["ALTURA", altura ? altura + " cm" : ""],
     ["PESO", peso ? peso + " kg" : ""],
+    ["EMAIL", email],
+    
   ];
   return (
     <View style={styles.container}>
       {dados.map(([titulo, valor]) => (
-        <View key={titulo} style={styles.dado}>
+        <View key={titulo} style={[styles.dado, titulo === "EMAIL" && styles.dadoCompleto]}>
           <Text style={styles.titulo}>{titulo}</Text>
           <Text style={styles.valor}>{valor || "Não informado"}</Text>
         </View>
@@ -36,6 +38,10 @@ export const styles = StyleSheet.create({
   dado: {
     width: '50%',
     padding: 15,
+  },
+
+  dadoCompleto: {
+    width: "100%",
   },
 
   titulo: {

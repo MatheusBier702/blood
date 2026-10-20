@@ -4,6 +4,7 @@ export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [nome, setNome] = React.useState("");
+  const [email, setEmail] = React.useState("");
   const [tipoSangue, setTipoSangue] = React.useState("");
   const [altura, setAltura] = React.useState("");
   const [peso, setPeso] = React.useState("");
@@ -33,6 +34,7 @@ export const GlobalStorage = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        email, setEmail,
         nome, setNome, tipoSangue, setTipoSangue, setContador,
         altura,
         setAltura,

@@ -48,6 +48,17 @@ export const styles = StyleSheet.create({
     color: "#23352B",
     backgroundColor: color.fundo,
   },
+  areaSenha: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: color.borda,
+    borderRadius: 12,
+    backgroundColor: color.fundo,
+  },
+  inputSenha: { flex: 1, minWidth: 0, borderWidth: 0, backgroundColor: "transparent" },
+  botaoVerSenha: { minHeight: 48, justifyContent: "center", paddingHorizontal: 12 },
+  textoVerSenha: { color: color.colorModelFour, fontWeight: "600", fontSize: 13 },
   seletor: {
     borderWidth: 1,
     borderColor: color.borda,
