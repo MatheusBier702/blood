@@ -75,5 +75,6 @@ export const styles = StyleSheet.create({
     marginTop: 8,
   },
   botaoTexto: { color: color.branco, fontSize: 17, fontWeight: "700" },
+  erro: { color: "#B42318", fontSize: 14, lineHeight: 20 },
   pressionado: { opacity: 0.8 },
 });
