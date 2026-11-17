@@ -350,7 +350,8 @@ export const RECOMENDACOES = [
     intervalo: "30 dias entre as doses",
     reforco: "Não tem reforço.",
     observacao: "Só para quem não comprova as 2 doses.",
-    regra: { tipo: "esquema", chaves: ["scr"], dosesNecessarias: 2, prazosMeses: [0, 1], deMeses: 12, ateMeses: 359 },
+    // A atualização desta faixa começa aos 10 anos; antes disso vale o calendário da criança.
+    regra: { tipo: "esquema", chaves: ["scr"], dosesNecessarias: 2, prazosMeses: [0, 1], deMeses: 120, ateMeses: 359 },
   },
   {
     id: "a-vfa", faixa: "adolescente", vacina: "vfa", tipo: "rotina",
@@ -359,7 +360,7 @@ export const RECOMENDACOES = [
     intervalo: "Mínimo de 30 dias entre as doses",
     reforco: "1 dose a partir dos 5 anos (ou 2 doses antes dos 5) completa o esquema.",
     observacao: "Quem nunca se vacinou deve procurar a unidade de saúde para atualizar a situação vacinal.",
-    regra: { tipo: "esquema", chaves: ["vfa"], dosesNecessarias: 1, completo: esquemaFebreAmarelaCompleto, deMeses: 60, ateMeses: 719 },
+    regra: { tipo: "esquema", chaves: ["vfa"], dosesNecessarias: 1, completo: esquemaFebreAmarelaCompleto, deMeses: 120, ateMeses: 719 },
   },
   {
     id: "a-dtpa-gest", faixa: "adolescente", vacina: "dtpa", tipo: "especial",
