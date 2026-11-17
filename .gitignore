@@ -42,3 +42,6 @@ yarn-error.*
 
 # Configuração privada do backend
 server/.env
+
+# Cache das UBSs baixadas do CNES
+server/.cache/

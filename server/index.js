@@ -3,12 +3,14 @@ const cors = require('cors');
 const db = require('./db');
 const { criarRotasUsuarios } = require('./usuarios.cjs');
 const { criarProxyFrutas } = require('./frutas.cjs');
+const { criarProxyUbs } = require('./ubs.cjs');
 
 function criarApp(banco = db) {
   const app = express();
   app.use(cors());
   app.use(express.json({ limit: '16kb' }));
   app.use(criarProxyFrutas());
+  app.use(criarProxyUbs());
   app.use('/api', criarRotasUsuarios(banco));
   app.use((erro, req, res, next) => {
     if (erro.type === 'entity.parse.failed') return res.status(400).json({ error: 'JSON inválido.' });

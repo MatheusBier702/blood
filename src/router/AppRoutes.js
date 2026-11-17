@@ -13,6 +13,7 @@ import { Meditacao } from "../pages/Meditacao/meditacao";
 import { Frutas } from "../pages/Frutas/frutas";
 import { Dica } from "../pages/Dica/dica";
 import { Emergencia } from "../pages/Emergencia/emergencia";
+import { Ubs } from "../pages/Ubs/ubs";
 import Perfil from "../pages/Perfil/perfil";
 import Login from "../pages/Login/login";
 import { inicialSangue } from "../pages/Sangue/InicialSangue/inicialSangue";
@@ -119,6 +120,13 @@ export default function AppRoutes() {
       <Stack.Screen
         name="Emergencia"
         component={Emergencia}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Ubs"
+        component={Ubs}
         options={{
           headerShown: false,
         }}

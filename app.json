@@ -19,6 +19,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "O Blood usa sua localização para mostrar as UBSs mais próximas e traçar a rota até elas."
+        }
+      ],
+      "expo-sharing",
+      "expo-audio",
+      "expo-asset"
+    ]
   }
 }

@@ -87,6 +87,13 @@ const Home = () => {
       descricao: "Saiba o que fazer e como agir em situações de emergência.",
       imagem: require("../screen/assets/emergencia.png"),
     },
+    {
+      nome: "UBS Próximas",
+      slug: "Ubs",
+      descricao:
+        "Veja no mapa, em tempo real, as Unidades Básicas de Saúde mais perto de você.",
+      imagem: require("../screen/assets/localizacao.png"),
+    },
   ];
 
   return (
