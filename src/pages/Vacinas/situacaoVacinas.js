@@ -108,13 +108,16 @@ function calcularPorIdade(regra, nascimento, nascimentoIso, aplicacoes, hoje) {
 
 // Regra "periodica": doses repetidas (anual, a cada 6 meses, a cada 10 anos).
 function calcularPeriodica(regra, nascimento, nascimentoIso, aplicacoes, hoje) {
-  const registros = registrosDe(aplicacoes, regra.chaves, nascimentoIso);
+  const todos = registrosDe(aplicacoes, regra.chaves, nascimentoIso);
+  // Gripe e covid recomeçam na faixa (só contam doses a partir do início dela);
+  // reforços de 10 anos (dT) contam a partir da última dose em qualquer idade.
+  const registros = regra.exigeRegistro ? todos : todos.filter((r) => r.idadeMeses >= regra.inicioMeses);
   const inicio = somarMeses(nascimento, regra.inicioMeses);
   const fim = regra.fimMeses != null ? somarMeses(nascimento, regra.fimMeses + 1) : null;
   const ultima = registros[registros.length - 1] ?? null;
   const base = { doses: null, ultima, nota: null, proximaRotulo: "Próxima dose" };
 
-  if (hoje < inicio) return { ...base, situacao: "nao_iniciada", proximaData: inicio, proximaAtrasada: false };
+  if (hoje < inicio) return { ...base, ultima: null, situacao: "nao_iniciada", proximaData: inicio, proximaAtrasada: false };
   if (fim && hoje >= fim) {
     return {
       ...base,
@@ -173,8 +176,10 @@ function calcularEsquema(regra, nascimento, nascimentoIso, aplicacoes, hoje, ida
 }
 
 // Regra "especial": a indicação depende do grupo; o app só mostra o que foi registrado.
-function calcularEspecial(regra, nascimentoIso, aplicacoes) {
-  const registros = registrosDe(aplicacoes, regra.chaves, nascimentoIso);
+function calcularEspecial(regra, nascimentoIso, aplicacoes, deMeses) {
+  // Só contam doses aplicadas a partir do início da faixa (ex.: a febre amarela dos
+  // 9 meses não é a dose da recomendação especial para idosos).
+  const registros = registrosDe(aplicacoes, regra.chaves, nascimentoIso).filter((r) => r.idadeMeses >= deMeses);
   return {
     situacao: registros.length ? "aplicada" : "nao_iniciada",
     doses: null,
@@ -193,10 +198,11 @@ export function calcularSituacao(recomendacao, nascimentoIso, aplicacoes, hoje =
   const nascimento = isoParaData(nascimentoIso);
   const idadeAtual = idadeEmMeses(nascimentoIso, hoje);
   const { regra } = recomendacao;
-  // Registros só contam para a faixa a que pertencem? Não: uma dose vale para a pessoa,
-  // independentemente da aba. As regras filtram por vacina e idade de aplicação.
+  // Uma dose vale para a pessoa, não para a aba: as regras filtram os registros por
+  // vacina e pela idade em que cada dose foi aplicada.
   if (regra.tipo === "idade") return calcularPorIdade(regra, nascimento, nascimentoIso, aplicacoes, hoje);
   if (regra.tipo === "periodica") return calcularPeriodica(regra, nascimento, nascimentoIso, aplicacoes, hoje);
   if (regra.tipo === "esquema") return calcularEsquema(regra, nascimento, nascimentoIso, aplicacoes, hoje, idadeAtual);
-  return calcularEspecial(regra, nascimentoIso, aplicacoes);
+  const faixa = FAIXAS.find((f) => f.valor === recomendacao.faixa);
+  return calcularEspecial(regra, nascimentoIso, aplicacoes, faixa?.deMeses ?? 0);
 }
